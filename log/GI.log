@@ -1,0 +1,151 @@
+2020-10-07 16:55:17,424 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 16:56:31,636 ERROR com.gensi.manage.controller.SysManageController [140] - Parameter 'directory' is not a directory
+java.lang.IllegalArgumentException: Parameter 'directory' is not a directory
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:545)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:521)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:691)
+	at com.gensi.manage.controller.SysManageController.getTransIdLogFiles(SysManageController.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-10-07 16:56:36,415 ERROR com.gensi.manage.controller.SysManageController [140] - Parameter 'directory' is not a directory
+java.lang.IllegalArgumentException: Parameter 'directory' is not a directory
+	at org.apache.commons.io.FileUtils.validateListFilesParameters(FileUtils.java:545)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:521)
+	at org.apache.commons.io.FileUtils.listFiles(FileUtils.java:691)
+	at com.gensi.manage.controller.SysManageController.getTransIdLogFiles(SysManageController.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-10-07 17:12:52,787 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:13:37,922 INFO  com.gensi.manage.controller.SysManageController [43] - SysManageAction.newSys: gsmanage=> GsmanageWithBLOBs [Hash = 1192388100, privatekey=null, publickey=null, serialVersionUID=1]
+2020-10-07 17:13:38,787 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:14:57,038 INFO  com.gensi.manage.controller.SysManageController [43] - SysManageAction.newSys: gsmanage=> GsmanageWithBLOBs [Hash = 39190610, privatekey=MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/TuyqCPkX7vZQ83Y+/6+7iWf17bA3cyWDWA4l0NgSVPTZ0f8ylgzkpgRQX0Wx/oJXAPi0YxGuutxLfLS8+WrP2/87xAahnDMZj7UyUhZ10r5HBxj+L8oDCowstGJddxK8RGc8JKfVS5qvga2M07xyK30y17OBOFxxZ+Zv6CGuOQ39/EkH2sOMpgEWjudFjTtKlSxT95oZm7FhdBwfgcSFpQ5ENqIubCYIsPqaCZjbuANE+ugJaG/bJuIB0PlomJ2f6P2zsvqhNsPiUgvhGqxcyQzlalIHhxfCSv5AJOvyEunrz7CPPulz4KYX2PUgL/90ry9+OaDLcOsRWcYWJXGvAgMBAAECggEAdfCfQLhlcJbWbdOaW35gBXrRh7DwSU8Imm+n0TJucubDSKII9VPCQRgEYtRJcFFaY27q5LKKzTDP7Q3Fkxck/V5AfMT93ZYhfqm06H/o7txsh/ddNh+aJ8PR5SGT3tEw0LZO+qoSehGxHHAS4VYLwEsFVVnbhVeMzjFixCzUzsW2EpKblwBFYR1KfFMGNkxAVm2MCFP65CGaRRL/Lvu03OzNmnOU+NfuMbvUSfluSLiV4XAHOIk9KT8EH9/HPXU7INUHb/O0NEFef9Ars5jT+aB9z4QjGxJ4hFq8+/qX/MUekv4IS3x+xaR6yIvNOSyrOHn5MuzXHFqjDTMC/IFkeQKBgQDv99LFh9p8AAVMSG39h+JSFNOhMmQOK/MaIdEix4Ahp6qaYfmbWq18wCc3nBch2Ad3gSUTrZy6PK81yoTrF01Z/p+fmDtal4Dh95EbWmq7zgAeWTWtS1foxd8yI9JKUIOhaMqpr+h86kcqNq7qXY5sTEdAszGlNY/XbKbujm6k0wKBgQDMFt9mBtKmfonI2VJDFCjesAnS0b2ZK5QpFXFCQq331/4mTvjcCuuyzwkkzfiyszo++HUqzJ1TBnY4Kd1zfe3lqHIJqLZOzV+385HB2V1P/xpkonviJNQnjGilZgI5xdIlh3Ua/IeVqic1YHxYCuiQDVys7Eh6dAbU0+I0HGImNQKBgQCQsbEgtFsUm/qV1bKkxjO8ZJx7PWRBe1S5tBxjyUHEiVIAhwU4HMQxTbgX+wGjwZw2/eM6a1vunDrVx4jALKvSkQr085kOdf4bwuh3QtzK41sE8avBE4YtcGq11A2wC75jLEnPaadY8vb4SELORJ1lRdVM+P/9az+RmQ1LGQ00SwKBgEr/QLrKWRBrwZA4JB2YQ+iJQiLhhk3KENkEEympPSqtiaxkKtkZfkGoCREoS3LHn+jR/qRqqol+/2RmJgWxygEx5C4efFf66mi7rd1RVhP2h6lheCrDI98gnrfhA4Jdanr2CxeOovhhnaTkvuzPnWSKNHsrHPs6tePxtNc3cu3dAoGBAJLettlcV4V2FHCkfrJ9XwBdy++RgDwKN3SQRtCaRfBzRkNXXkMPB2ou9Q3UkwoSds/r9P60Ms/Wi3SJT1rwZ82vbSJgMRI1RPaCLV8JzKF51WkWCjkbfLkXpuw6yfkju0IJ7me5YthngzQwC1+86GvLdCsjX5JSVigykenQreS1, publickey=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv07sqgj5F+72UPN2Pv+vu4ln9e2wN3Mlg1gOJdDYElT02dH/MpYM5KYEUF9Fsf6CVwD4tGMRrrrcS3y0vPlqz9v/O8QGoZwzGY+1MlIWddK+RwcY/i/KAwqMLLRiXXcSvERnPCSn1Uuar4GtjNO8cit9MtezgThccWfmb+ghrjkN/fxJB9rDjKYBFo7nRY07SpUsU/eaGZuxYXQcH4HEhaUORDaiLmwmCLD6mgmY27gDRProCWhv2ybiAdD5aJidn+j9s7L6oTbD4lIL4RqsXMkM5WpSB4cXwkr+QCTr8hLp68+wjz7pc+CmF9j1IC//dK8vfjmgy3DrEVnGFiVxrwIDAQAB, serialVersionUID=1]
+2020-10-07 17:14:57,062 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:15:10,708 INFO  com.gensi.manage.controller.SysManageController [59] - SysManageAction.deleteSys: sysid=> null
+2020-10-07 17:15:14,376 INFO  com.gensi.manage.controller.SysManageController [59] - SysManageAction.deleteSys: sysid=> null
+2020-10-07 17:15:15,488 INFO  com.gensi.manage.controller.SysManageController [43] - SysManageAction.newSys: gsmanage=> GsmanageWithBLOBs [Hash = 577009292, privatekey=MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/TuyqCPkX7vZQ83Y+/6+7iWf17bA3cyWDWA4l0NgSVPTZ0f8ylgzkpgRQX0Wx/oJXAPi0YxGuutxLfLS8+WrP2/87xAahnDMZj7UyUhZ10r5HBxj+L8oDCowstGJddxK8RGc8JKfVS5qvga2M07xyK30y17OBOFxxZ+Zv6CGuOQ39/EkH2sOMpgEWjudFjTtKlSxT95oZm7FhdBwfgcSFpQ5ENqIubCYIsPqaCZjbuANE+ugJaG/bJuIB0PlomJ2f6P2zsvqhNsPiUgvhGqxcyQzlalIHhxfCSv5AJOvyEunrz7CPPulz4KYX2PUgL/90ry9+OaDLcOsRWcYWJXGvAgMBAAECggEAdfCfQLhlcJbWbdOaW35gBXrRh7DwSU8Imm+n0TJucubDSKII9VPCQRgEYtRJcFFaY27q5LKKzTDP7Q3Fkxck/V5AfMT93ZYhfqm06H/o7txsh/ddNh+aJ8PR5SGT3tEw0LZO+qoSehGxHHAS4VYLwEsFVVnbhVeMzjFixCzUzsW2EpKblwBFYR1KfFMGNkxAVm2MCFP65CGaRRL/Lvu03OzNmnOU+NfuMbvUSfluSLiV4XAHOIk9KT8EH9/HPXU7INUHb/O0NEFef9Ars5jT+aB9z4QjGxJ4hFq8+/qX/MUekv4IS3x+xaR6yIvNOSyrOHn5MuzXHFqjDTMC/IFkeQKBgQDv99LFh9p8AAVMSG39h+JSFNOhMmQOK/MaIdEix4Ahp6qaYfmbWq18wCc3nBch2Ad3gSUTrZy6PK81yoTrF01Z/p+fmDtal4Dh95EbWmq7zgAeWTWtS1foxd8yI9JKUIOhaMqpr+h86kcqNq7qXY5sTEdAszGlNY/XbKbujm6k0wKBgQDMFt9mBtKmfonI2VJDFCjesAnS0b2ZK5QpFXFCQq331/4mTvjcCuuyzwkkzfiyszo++HUqzJ1TBnY4Kd1zfe3lqHIJqLZOzV+385HB2V1P/xpkonviJNQnjGilZgI5xdIlh3Ua/IeVqic1YHxYCuiQDVys7Eh6dAbU0+I0HGImNQKBgQCQsbEgtFsUm/qV1bKkxjO8ZJx7PWRBe1S5tBxjyUHEiVIAhwU4HMQxTbgX+wGjwZw2/eM6a1vunDrVx4jALKvSkQr085kOdf4bwuh3QtzK41sE8avBE4YtcGq11A2wC75jLEnPaadY8vb4SELORJ1lRdVM+P/9az+RmQ1LGQ00SwKBgEr/QLrKWRBrwZA4JB2YQ+iJQiLhhk3KENkEEympPSqtiaxkKtkZfkGoCREoS3LHn+jR/qRqqol+/2RmJgWxygEx5C4efFf66mi7rd1RVhP2h6lheCrDI98gnrfhA4Jdanr2CxeOovhhnaTkvuzPnWSKNHsrHPs6tePxtNc3cu3dAoGBAJLettlcV4V2FHCkfrJ9XwBdy++RgDwKN3SQRtCaRfBzRkNXXkMPB2ou9Q3UkwoSds/r9P60Ms/Wi3SJT1rwZ82vbSJgMRI1RPaCLV8JzKF51WkWCjkbfLkXpuw6yfkju0IJ7me5YthngzQwC1+86GvLdCsjX5JSVigykenQreS1, publickey=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv07sqgj5F+72UPN2Pv+vu4ln9e2wN3Mlg1gOJdDYElT02dH/MpYM5KYEUF9Fsf6CVwD4tGMRrrrcS3y0vPlqz9v/O8QGoZwzGY+1MlIWddK+RwcY/i/KAwqMLLRiXXcSvERnPCSn1Uuar4GtjNO8cit9MtezgThccWfmb+ghrjkN/fxJB9rDjKYBFo7nRY07SpUsU/eaGZuxYXQcH4HEhaUORDaiLmwmCLD6mgmY27gDRProCWhv2ybiAdD5aJidn+j9s7L6oTbD4lIL4RqsXMkM5WpSB4cXwkr+QCTr8hLp68+wjz7pc+CmF9j1IC//dK8vfjmgy3DrEVnGFiVxrwIDAQAB, serialVersionUID=1]
+2020-10-07 17:15:15,559 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:15:25,124 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:15:30,104 INFO  com.gensi.manage.controller.SysManageController [59] - SysManageAction.deleteSys: sysid=> null
+2020-10-07 17:15:54,888 INFO  com.gensi.manage.controller.SysManageController [43] - SysManageAction.newSys: gsmanage=> GsmanageWithBLOBs [Hash = 935847753, privatekey=MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/TuyqCPkX7vZQ83Y+/6+7iWf17bA3cyWDWA4l0NgSVPTZ0f8ylgzkpgRQX0Wx/oJXAPi0YxGuutxLfLS8+WrP2/87xAahnDMZj7UyUhZ10r5HBxj+L8oDCowstGJddxK8RGc8JKfVS5qvga2M07xyK30y17OBOFxxZ+Zv6CGuOQ39/EkH2sOMpgEWjudFjTtKlSxT95oZm7FhdBwfgcSFpQ5ENqIubCYIsPqaCZjbuANE+ugJaG/bJuIB0PlomJ2f6P2zsvqhNsPiUgvhGqxcyQzlalIHhxfCSv5AJOvyEunrz7CPPulz4KYX2PUgL/90ry9+OaDLcOsRWcYWJXGvAgMBAAECggEAdfCfQLhlcJbWbdOaW35gBXrRh7DwSU8Imm+n0TJucubDSKII9VPCQRgEYtRJcFFaY27q5LKKzTDP7Q3Fkxck/V5AfMT93ZYhfqm06H/o7txsh/ddNh+aJ8PR5SGT3tEw0LZO+qoSehGxHHAS4VYLwEsFVVnbhVeMzjFixCzUzsW2EpKblwBFYR1KfFMGNkxAVm2MCFP65CGaRRL/Lvu03OzNmnOU+NfuMbvUSfluSLiV4XAHOIk9KT8EH9/HPXU7INUHb/O0NEFef9Ars5jT+aB9z4QjGxJ4hFq8+/qX/MUekv4IS3x+xaR6yIvNOSyrOHn5MuzXHFqjDTMC/IFkeQKBgQDv99LFh9p8AAVMSG39h+JSFNOhMmQOK/MaIdEix4Ahp6qaYfmbWq18wCc3nBch2Ad3gSUTrZy6PK81yoTrF01Z/p+fmDtal4Dh95EbWmq7zgAeWTWtS1foxd8yI9JKUIOhaMqpr+h86kcqNq7qXY5sTEdAszGlNY/XbKbujm6k0wKBgQDMFt9mBtKmfonI2VJDFCjesAnS0b2ZK5QpFXFCQq331/4mTvjcCuuyzwkkzfiyszo++HUqzJ1TBnY4Kd1zfe3lqHIJqLZOzV+385HB2V1P/xpkonviJNQnjGilZgI5xdIlh3Ua/IeVqic1YHxYCuiQDVys7Eh6dAbU0+I0HGImNQKBgQCQsbEgtFsUm/qV1bKkxjO8ZJx7PWRBe1S5tBxjyUHEiVIAhwU4HMQxTbgX+wGjwZw2/eM6a1vunDrVx4jALKvSkQr085kOdf4bwuh3QtzK41sE8avBE4YtcGq11A2wC75jLEnPaadY8vb4SELORJ1lRdVM+P/9az+RmQ1LGQ00SwKBgEr/QLrKWRBrwZA4JB2YQ+iJQiLhhk3KENkEEympPSqtiaxkKtkZfkGoCREoS3LHn+jR/qRqqol+/2RmJgWxygEx5C4efFf66mi7rd1RVhP2h6lheCrDI98gnrfhA4Jdanr2CxeOovhhnaTkvuzPnWSKNHsrHPs6tePxtNc3cu3dAoGBAJLettlcV4V2FHCkfrJ9XwBdy++RgDwKN3SQRtCaRfBzRkNXXkMPB2ou9Q3UkwoSds/r9P60Ms/Wi3SJT1rwZ82vbSJgMRI1RPaCLV8JzKF51WkWCjkbfLkXpuw6yfkju0IJ7me5YthngzQwC1+86GvLdCsjX5JSVigykenQreS1, publickey=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv07sqgj5F+72UPN2Pv+vu4ln9e2wN3Mlg1gOJdDYElT02dH/MpYM5KYEUF9Fsf6CVwD4tGMRrrrcS3y0vPlqz9v/O8QGoZwzGY+1MlIWddK+RwcY/i/KAwqMLLRiXXcSvERnPCSn1Uuar4GtjNO8cit9MtezgThccWfmb+ghrjkN/fxJB9rDjKYBFo7nRY07SpUsU/eaGZuxYXQcH4HEhaUORDaiLmwmCLD6mgmY27gDRProCWhv2ybiAdD5aJidn+j9s7L6oTbD4lIL4RqsXMkM5WpSB4cXwkr+QCTr8hLp68+wjz7pc+CmF9j1IC//dK8vfjmgy3DrEVnGFiVxrwIDAQAB, serialVersionUID=1]
+2020-10-07 17:15:54,911 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:16:00,075 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:16:07,953 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:16:35,090 INFO  com.gensi.manage.controller.SysManageController [66] - SysManageAction.querySys: 
+2020-10-07 17:19:14,244 INFO  com.gensi.manage.controller.GenSIController [120] - GenSIInterfaceV2: received Request => {"body":"85F5EDDEF09A8BCF0FB8239ADBC5DE6F60B2034017D5293CD9F9354EC85B3215","header":{"inTime":"20201007051912","key":"Woh5Q5WWbot5fz1sJlvuAWgjiK38G9U2s9Ie2ddkOiqaJ0sJ89PZbTTwMaw9Gsh/lHQizsOn6rh2WmKODEZeq9LR+BYk5MAYhWGIzH6fw4OHxuzUhq9WPnBceLMLS5JXqH5Im8DIm9T6A14kZqQ6JRpspyjYQ4CV1BfQrFJRl0lBmQGB7Z0L/FRGP33jbZXv/pNoGQBQy2tp+bXPQRK6x0Ub5E2z7cdQeUXPcfMT1asUkRkmbSw7366sJojLzSLi0XNTv6hpdNJHWWaVb5ms4+9NbMab1I/sxAIkGsQhGHq5qMkTuCF2HfTxS+mqKDE5mQcq109VKrJ84w2LcrWydw==","respTime":"","serviceCode":"search_mobile_mark","sysId":"MyTestSys","sysPwd":"testPwd","sysUser":"testUser","transId":"2018050400001"}}
+2020-10-07 17:19:14,350 INFO  com.gensi.manage.controller.GenSIController [126] - GenSIInterfaceV2: decryped Request=> {"header":{"inTime":"20201007051912","serviceCode":"search_mobile_mark","sysId":"MyTestSys","transId":"2018050400001","respTime":"","sysPwd":"testPwd","sysUser":"testUser","key":"Woh5Q5WWbot5fz1sJlvuAWgjiK38G9U2s9Ie2ddkOiqaJ0sJ89PZbTTwMaw9Gsh/lHQizsOn6rh2WmKODEZeq9LR+BYk5MAYhWGIzH6fw4OHxuzUhq9WPnBceLMLS5JXqH5Im8DIm9T6A14kZqQ6JRpspyjYQ4CV1BfQrFJRl0lBmQGB7Z0L/FRGP33jbZXv/pNoGQBQy2tp+bXPQRK6x0Ub5E2z7cdQeUXPcfMT1asUkRkmbSw7366sJojLzSLi0XNTv6hpdNJHWWaVb5ms4+9NbMab1I/sxAIkGsQhGHq5qMkTuCF2HfTxS+mqKDE5mQcq109VKrJ84w2LcrWydw=="},"body":{"mobile":"18874819035"}}
+2020-10-07 17:19:14,351 INFO  com.gensi.manage.config.GsLogConfig [32] - 追加trans日志到D:/StudySource/GenSI2/log/2018050400001.gsTransLog
+2020-10-07 17:19:14,352 INFO  com.gensi.manage.controller.GenSIController [164] - fydInterfaceV2: request=> {"header":{"inTime":"20201007051912","serviceCode":"search_mobile_mark","sysId":"MyTestSys","transId":"2018050400001","respTime":"","sysPwd":"testPwd","sysUser":"testUser","key":"Woh5Q5WWbot5fz1sJlvuAWgjiK38G9U2s9Ie2ddkOiqaJ0sJ89PZbTTwMaw9Gsh/lHQizsOn6rh2WmKODEZeq9LR+BYk5MAYhWGIzH6fw4OHxuzUhq9WPnBceLMLS5JXqH5Im8DIm9T6A14kZqQ6JRpspyjYQ4CV1BfQrFJRl0lBmQGB7Z0L/FRGP33jbZXv/pNoGQBQy2tp+bXPQRK6x0Ub5E2z7cdQeUXPcfMT1asUkRkmbSw7366sJojLzSLi0XNTv6hpdNJHWWaVb5ms4+9NbMab1I/sxAIkGsQhGHq5qMkTuCF2HfTxS+mqKDE5mQcq109VKrJ84w2LcrWydw=="},"body":{"mobile":"18874819035"}}
+2020-10-07 17:19:14,352 INFO  com.gensi.manage.controller.GenSIController [166] - crawlerInterface: error => 参数处理正常
+2020-10-07 17:19:14,364 INFO  com.gensi.manage.service.BusiService [37] - start doProcess:sysId => MyTestSys;serviceCode => search_mobile_mark;requestMsg => {"mobile":"18874819035"}
+2020-10-07 17:19:14,364 INFO  com.gensi.manage.service.BusiService [40] - process entry => 进入手机号码标注接口对接
+2020-10-07 17:19:14,366 INFO  com.gensi.manage.service.BusiService [48] - process info : 手机号码标注异步推送线程正常启动
+2020-10-07 17:19:14,366 INFO  com.gensi.manage.config.GsLogConfig [32] - 追加trans日志到D:/StudySource/GenSI2/log/2018050400001.gsTransLog
+2020-10-07 17:19:14,374 INFO  com.gensi.module.phoneTag.PhoneTagCallbackV2 [49] - start thread: phoneTagInfo  = {"transId":"2018050400001","mobile":"18874819035"}
+2020-10-07 17:19:14,375 ERROR com.gensi.module.phoneTag.PhoneTagCallbackV2 [85] - 查询手机号码标注出错：
+java.lang.NullPointerException
+	at com.gensi.module.phoneTag.PhoneTagCallbackV2.run(PhoneTagCallbackV2.java:57)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
