@@ -32,14 +32,15 @@ public class ClientTest {
         reqHeader.setSysUser("testUser");
         reqHeader.setSysPwd("testPwd");
         //唯一的请求ID。 重复的transId将直接返回第一次请求的结果。
-        reqHeader.setTransId("2018050400001");
-        //服务功能码
-        reqHeader.setServiceCode("search_mobile_mark");
+        reqHeader.setTransId("2020102100004");
+        //服务功能码-查询手机号码标注
+//        reqHeader.setServiceCode("search_mobile_mark");
+        reqHeader.setServiceCode("search_mobile_area");
         ftClient.setReportHeader(reqHeader);
 
         //三、业务参数部分 由提供的接口文档确定
         JSONObject reportbody = new JSONObject();
-        reportbody.put("mobile", "18874819035");
+        reportbody.put("mobile", "15245818282");
         ftClient.setReportBody(reportbody.toJSONString());
 
         ftRes = ftClient.postRequest();
