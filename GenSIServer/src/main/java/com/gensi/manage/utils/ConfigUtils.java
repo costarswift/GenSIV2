@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * 配置工具类
  *
- * @author shencheng
+ * @author
  */
 @Component
 public class ConfigUtils {

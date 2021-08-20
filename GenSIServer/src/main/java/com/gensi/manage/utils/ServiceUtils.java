@@ -8,8 +8,6 @@ import org.apache.log4j.Logger;
 /**
  * 服务工具类
  * 
- * @author shencheng
- *
  */
 public class ServiceUtils {
 	private static final Logger logger = Logger.getLogger(com.gensi.manage.utils.ServiceUtils.class);

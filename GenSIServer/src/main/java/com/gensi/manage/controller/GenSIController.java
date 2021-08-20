@@ -6,9 +6,11 @@ import com.gensi.manage.config.GsLogConfig;
 import com.gensi.manage.entity.GsResponse;
 import com.gensi.manage.entity.RequestMsgHeader;
 import com.gensi.manage.entity.RequestMsgHeaderV2;
+import com.gensi.manage.entity.ServiceResponseMsg;
 import com.gensi.manage.service.BusiService;
 import com.gensi.manage.service.DecrypService;
 import com.gensi.manage.service.GsrequestService;
+import com.gensi.manage.service.SyncBusiService;
 import com.gensi.manage.utils.ConfigUtils;
 import com.gensi.manage.utils.ServiceUtils;
 import io.swagger.annotations.Api;
@@ -33,6 +35,8 @@ public class GenSIController {
 	@Resource
 	private BusiService busiService;
 	@Resource
+	private SyncBusiService syncBusiService;
+	@Resource
 	private GsLogConfig gsLogConfig;
 	@Resource
 	private DecrypService decrypService;
@@ -40,7 +44,7 @@ public class GenSIController {
 	private Logger logger = Logger.getLogger(getClass());
 	
 	/**
-	 * 两个接口统一的处理逻辑：
+	 * 两个异步接口统一的处理逻辑：
 	 * 1、接口接收请求，进行参数验证。
 	 * 2、同步返回参数验证的结果。
 	 * 3、参数验证通过后，进入业务处理逻辑。 根据transId查询历史请求，已经请求过的，直接返回上次的结果。
@@ -52,9 +56,7 @@ public class GenSIController {
 		logger.info("GsRestInterface: request=> " + requestMessage);
 		JSONObject rspBody = new JSONObject();
 		JSONObject jRequestMessage = JSONObject.parseObject(requestMessage);
-		// 通用接口只接收通用的JSON对象，不对该对象做任何定义。
 		RequestMsgHeader reqHeader = jRequestMessage.getObject("header", RequestMsgHeader.class);
-		// JSONObject requestParaBody = jRequestMessage.getJSONObject("body");
 		// 通一使用sysId标识时再启用
 		// header为必须传的参数 包含transId,sysId,serviceCode。
 		if (null == jRequestMessage || null == reqHeader) {
@@ -99,9 +101,9 @@ public class GenSIController {
 		
 			String hisRsponse = gsrequestService.getHisResp(reqTransId, serviceCode);// 查询历史记录
 			if (StringUtils.isNotEmpty(hisRsponse)) {
-				// 有历史记录，直接给蜂易贷推送历史记录。
+				// 有历史记录，直接给业务系统推送历史记录。
 				logger.info("crawlerInterface: info => 	该请求已正常请求过，将返回历史结果;transId:"+reqTransId+";serviceCode:"+serviceCode+" ");
-				// 异步发送给蜂易贷
+				// 异步发送给业务系统
 				ServiceUtils.sendAsyn(sysId, hisRsponse);
 				return rspBody;
 			}
@@ -114,16 +116,16 @@ public class GenSIController {
 		return rspBody;
 	}
 
-	@ApiOperation(value = "GenSI加密接口", notes = "增加接口鉴权相关机制。需配合提供的客户端程序进行使用。")
-	@RequestMapping(value = "/gsInterfaceV2", method = RequestMethod.POST)
-	public Object gsDecrypedInterfaceV2(HttpServletRequest request) {
-		logger.info("GenSIInterfaceV2: received Request => " + request.getParameter("ftRequestInfo"));
+	@ApiOperation(value = "GenSI异步业务接口", notes = "增加接口鉴权相关机制。需配合提供的客户端程序进行使用。")
+	@RequestMapping(value = "/gsInterfaceAsync", method = RequestMethod.POST)
+	public Object gsDecrypedInterfaceAsync(HttpServletRequest request) {
+		logger.info("gsInterfaceAsync: received Request => " + request.getParameter("ftRequestInfo"));
 		JSONObject rspBody = new JSONObject();
 		GsResponse fydRes = null;
 		JSONObject ftRequestInfo = JSON.parseObject(request.getParameter("ftRequestInfo"));
 		// 报文解密
 		JSONObject jRequestMessage = decrypService.decrypData(ftRequestInfo, rspBody);
-		logger.info("GenSIInterfaceV2: decryped Request=> " + jRequestMessage);
+		logger.info("gsInterfaceAsync: decryped Request=> " + jRequestMessage);
 		// 解密失败 返回错误信息
 		if (null == jRequestMessage) {
 			return rspBody;
@@ -131,7 +133,7 @@ public class GenSIController {
 		RequestMsgHeaderV2 reqHeader = jRequestMessage.getObject("header", RequestMsgHeaderV2.class);
 		//简单报文参数检查
 		if(null == reqHeader || "".equals(reqHeader.getServiceCode()) || "".equals(reqHeader.getTransId())){
-			logger.info("crawlerInterface: error =>报文头参数缺失");
+			logger.info("gsInterfaceAsync: error =>报文头参数缺失");
 			// 返回错误信息
 			rspBody.put("transId", "");
 			rspBody.put("result", "1");
@@ -141,7 +143,7 @@ public class GenSIController {
 		// 检查系统标识是否存在 通一使用sysId标识时再启用
 		String sysId = reqHeader.getSysId();
 		if (!ConfigUtils.checkSysId(sysId)) {
-			logger.info("crawlerInterface: error =>无效的系统标识sysId：" + sysId);
+			logger.info("gsInterfaceAsync: error =>无效的系统标识sysId：" + sysId);
 			// 返回错误信息
 			rspBody.put("transId", "");
 			rspBody.put("result", "1");
@@ -155,27 +157,26 @@ public class GenSIController {
 		
 		//有历史请求记录直接返回
 		if(StringUtils.isEmpty(transId)|| StringUtils.isEmpty(sysId)|| StringUtils.isEmpty(serviceCode)){
-			logger.info("crawlerInterface: error => 参数处理错误");
+			logger.info("gsInterfaceAsync: error => 参数处理错误");
 			fydRes = new GsResponse(serviceCode, transId, "1", "参数处理错误");
 			rspBody = fydRes.toJsonFormat();
 			return rspBody;
 		}else{
 			gsLogConfig.addTransLogAppender(logger, transId);
-			logger.info("fydInterfaceV2: request=> " + jRequestMessage);
+			logger.info("gsInterfaceAsync: request=> " + jRequestMessage);
 			
-			logger.info("crawlerInterface: error => 参数处理正常");
+			logger.info("gsInterfaceAsync: error => 参数处理正常");
 			fydRes = new GsResponse(serviceCode, transId, "0", "请求接收成功");
 			rspBody = fydRes.toJsonFormat();
 			
 			String hisRsponse = gsrequestService.getHisResp(transId, serviceCode);// 查询历史记录
 			if (StringUtils.isNotEmpty(hisRsponse)) {
 				// 有历史记录，直接推送历史记录。
-				logger.info("crawlerInterface: info => transId:"+transId+";serviceCode:"+serviceCode+" 已正常请求过，返回历史结果");
+				logger.info("gsInterfaceAsync: info => transId:"+transId+";serviceCode:"+serviceCode+" 已正常请求过，返回历史结果");
 				// 异步发送结果
 				ServiceUtils.sendAsyn(sysId, hisRsponse);
 				return rspBody;
 			}
-			//没有历史记录。if块执行完成， 执行后面的业务逻辑
 		}
 		
 		busiService.doProcess(sysId,transId, serviceCode, jRequestBody);
@@ -183,5 +184,70 @@ public class GenSIController {
 		return rspBody;
 	}
 
+	@ApiOperation(value = "GenSI同步业务接口", notes = "增加接口鉴权相关机制。需配合提供的客户端程序进行使用。")
+	@RequestMapping(value = "/gsInterfaceSync", method = RequestMethod.POST)
+	public Object gsDecrypedInterfaceSync(HttpServletRequest request) {
+		logger.info("gsInterfaceSync: received Request => " + request.getParameter("ftRequestInfo"));
+		JSONObject rspBody = new JSONObject();
+		GsResponse fydRes = null;
+		JSONObject ftRequestInfo = JSON.parseObject(request.getParameter("ftRequestInfo"));
+		// 报文解密
+		JSONObject jRequestMessage = decrypService.decrypData(ftRequestInfo, rspBody);
+		logger.info("gsInterfaceSync: decryped Request=> " + jRequestMessage);
+		// 解密失败 返回错误信息
+		if (null == jRequestMessage) {
+			return rspBody;
+		}
+		RequestMsgHeaderV2 reqHeader = jRequestMessage.getObject("header", RequestMsgHeaderV2.class);
+		//简单报文参数检查
+		if(null == reqHeader || "".equals(reqHeader.getServiceCode()) || "".equals(reqHeader.getTransId())){
+			logger.info("gsInterfaceSync: error =>报文头参数缺失");
+			// 返回错误信息
+			rspBody.put("transId", "");
+			rspBody.put("result", "1");
+			rspBody.put("desc", "报文头参数缺失");
+			return rspBody;
+		}
+		// 检查系统标识是否存在 通一使用sysId标识时再启用
+		String sysId = reqHeader.getSysId();
+		if (!ConfigUtils.checkSysId(sysId)) {
+			logger.info("gsInterfaceSync: error =>无效的系统标识sysId：" + sysId);
+			// 返回错误信息
+			rspBody.put("transId", "");
+			rspBody.put("result", "1");
+			rspBody.put("desc", "无效的系统标识:" + sysId);
+			return rspBody;
+		}
 
+		JSONObject jRequestBody = jRequestMessage.getJSONObject("body");
+		String transId = reqHeader.getTransId();
+		String serviceCode = reqHeader.getServiceCode();
+
+		//有历史请求记录直接返回
+		if(StringUtils.isEmpty(transId)|| StringUtils.isEmpty(sysId)|| StringUtils.isEmpty(serviceCode)){
+			logger.info("gsInterfaceSync: error => 参数处理错误");
+			fydRes = new GsResponse(serviceCode, transId, "1", "参数处理错误");
+			rspBody = fydRes.toJsonFormat();
+			return rspBody;
+		}else{
+			gsLogConfig.addTransLogAppender(logger, transId);
+			logger.info("gsInterfaceSync: request=> " + jRequestMessage);
+
+			logger.info("gsInterfaceSync: error => 参数处理正常");
+
+			String hisRsponse = gsrequestService.getHisResp(transId, serviceCode);// 查询历史记录
+			if (StringUtils.isNotEmpty(hisRsponse)) {
+				// 有历史记录，直接推送历史记录。
+				logger.info("gsInterfaceSync: info => transId:"+transId+";serviceCode:"+serviceCode+" 已正常请求过，返回历史结果");
+				return hisRsponse;
+			}
+		}
+
+		ServiceResponseMsg serviceResponseMsg = syncBusiService.doProcess(sysId,transId, serviceCode, jRequestBody);
+		gsLogConfig.removeTransLogAppender(logger);
+		rspBody.put("transId", transId);
+		rspBody.put("result", "0");
+		rspBody.put("desc", JSONObject.toJSONString(serviceResponseMsg));
+		return serviceResponseMsg;
+	}
 }

@@ -5,8 +5,6 @@ import com.gensi.manage.entity.ServiceResponseEntity;
 /**
  * 服务发送回调
  * 
- * @author shencheng
- *
  */
 public interface ServiceResponseCallback {
 	/**

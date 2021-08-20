@@ -2,8 +2,7 @@ package com.gensi.manage.entity;
 
 /**
  * 请求信息第二版，对应crawlerController中v2版本接口。 增加接口鉴权功能。
- * @author ftoul090
- * @date 2017年6月1日 -- 下午3:05:24
+ * @author
  */
 public class RequestMsgV2 {
 

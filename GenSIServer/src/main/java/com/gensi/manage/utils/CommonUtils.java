@@ -297,8 +297,9 @@ public class CommonUtils {
 			logger.warn(e.getMessage(), e);
 		} finally {
 			try {
-				if (httpclient != null)
+				if (httpclient != null) {
 					httpclient.close();
+				}
 			} catch (Exception e) {
 				logger.warn(e.getMessage(), e);
 			}
@@ -553,16 +554,16 @@ public class CommonUtils {
 //	}
 
 	public static void main(String[] args) {
-		try {
+//		try {
 			// CommonUtils.sendHttpRequest("http://192.168.52.213:8080/portal/doCredit/data", "{}");
 			// String requestUrl = "http://218.76.63.90:8010/portal/doCredit/data";
-			String requestUrl = "http://192.168.52.105:8080/fyd/doCredit/data";
+//			String requestUrl = "http://192.168.52.105:8080/fyd/doCredit/data";
 			// String requestJson = FileUtils.readFileToString(new File("D:/Project/rsp_json.txt"));
 
-			com.gensi.manage.utils.CommonUtils.sendHttpParameterRequest(requestUrl, "creditData", "testInfo");
-		} catch (Exception e) {
-			logger.warn(e.getMessage(), e);
-		}
+//			com.gensi.manage.utils.CommonUtils.sendHttpParameterRequest(requestUrl, "creditData", "testInfo");
+//		} catch (Exception e) {
+//			logger.warn(e.getMessage(), e);
+//		}
 	}
 
 	public static void convertFileEncoding(String srcFilename, String strEncoding, String dstFilename, String dstEncoding) {
@@ -870,7 +871,7 @@ public class CommonUtils {
 	}
 
 	/**
-	 * 判断一个字符串是否为空，或者为null , by shencheng
+	 * 判断一个字符串是否为空，或者为null
 	 * 
 	 * @param input
 	 * @return 字符串是否为空或者为null返回true,否则返回false

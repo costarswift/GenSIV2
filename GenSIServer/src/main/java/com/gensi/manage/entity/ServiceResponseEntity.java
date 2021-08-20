@@ -3,8 +3,6 @@ package com.gensi.manage.entity;
 /**
  * 服务响应实体类
  * 
- * @author shencheng
- *
  */
 public class ServiceResponseEntity {
 	/**

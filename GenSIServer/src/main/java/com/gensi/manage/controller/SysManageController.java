@@ -93,7 +93,7 @@ public class SysManageController {
     }
 
     /**
-     * 获取指定目录下transId文件列表 by shencheng
+     * 获取指定目录下transId文件列表
      *
      * @param request
      * @return
@@ -143,7 +143,7 @@ public class SysManageController {
     }
 
     /**
-     * 获取指定transId文件的内容 by shencheng
+     * 获取指定transId文件的内容
      *
      * @param request
      * @return

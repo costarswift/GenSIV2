@@ -16,8 +16,6 @@ import java.io.IOException;
 /**
  * http请求帮助类
  * 
- * @author shencheng
- *
  */
 public class HttpUtils {
 	private static Logger logger = Logger.getLogger(com.gensi.manage.utils.HttpUtils.class);

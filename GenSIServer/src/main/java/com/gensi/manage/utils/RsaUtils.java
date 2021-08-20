@@ -18,8 +18,6 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * RSA 密钥生成，加解密工具类
  * 
- * @author shencheng
- *
  */
 public class RsaUtils {
 	public static final Logger LOGGER = Logger.getLogger(com.gensi.manage.utils.RsaUtils.class);
