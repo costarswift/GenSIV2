@@ -9,7 +9,7 @@
 - GenSIClient: 模拟外部应用客户端。通过调用封装的客户端API，请求接口服务。
 
 # 测试流程：
-1. 依次启动 GenSIServer, GenSIResource, GenSIClient三个应用。
+1. 依次启动 GenSIResource,GenSIServer,GenSIClient三个应用。
 2. 启动完成后，访问GenSIServer的应用配置页面：http://localhost:8888/interfaceManage/index.html#/manage/interface，访问密钥gensi
 3. 在应用配置页面配置应用信息sysId: MyTestSys, sysName:genSiClient，然后响应地址配置： http://localhost:8890/client/receiveMessage 其他的就不用配了。配置完成后会默认生成一对RSA密钥。
 4. 在GenSIClient中执行test目录下的ClientTest的main方法，模拟向GenSIServer发起请求，需要按照注释修改参数。
