@@ -5,14 +5,14 @@ public class RequestMsg {
     public static final String MOBILE_AREA_SERVICE = "search_mobile_area"; //手机号码归属度查询接口 2017年7月19日
     public static final String IDCARD_INFO_BAIDU = "search_idcard_info_baidu";//从百度查询身份证信息接口
     
-    public com.gensi.manage.entity.RequestMsgHeader header;
+    public RequestMsgHeader header;
     public RequestMsgBody body;
 
-    public com.gensi.manage.entity.RequestMsgHeader getHeader() {
+    public RequestMsgHeader getHeader() {
         return header;
     }
 
-    public void setHeader(com.gensi.manage.entity.RequestMsgHeader header) {
+    public void setHeader(RequestMsgHeader header) {
         this.header = header;
     }
 

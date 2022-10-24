@@ -1,9 +1,9 @@
 # 自行实现的开放平台Demo。
-- 启动zookeeper，作为dubbo服务注册中心
+- 本地启动nacos，作为dubbo服务注册中心
 - 启动mysql，存储数据。
 
 # 工程结构：
-- GenSiServer: 开放平台中心，负责应用信息维护、接口请求解密、日志整合以及请求转发。
+- GenSIServer: 开放平台中心，负责应用信息维护、接口请求解密、日志整合以及请求转发。
 - GenSIResource: 后台应用服务，负责通过Dubbo对外提供手机号码标注服务，简单的使用sogou的搜索结果模拟内部业务。
 - GensIInterface: 前后台微服务调用的接口。
 - GenSIClient: 模拟外部应用客户端。通过调用封装的客户端API，请求接口服务。

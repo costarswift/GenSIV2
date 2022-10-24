@@ -75,11 +75,26 @@
                 <artifactId>mybatis</artifactId>
                 <version>3.5.5</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.dubbo.springboot</groupId>-->
+<!--                <artifactId>spring-boot-starter-dubbo</artifactId>-->
+<!--                <version>1.0.0</version>-->
+<!--            </dependency>-->
             <dependency>
-                <groupId>io.dubbo.springboot</groupId>
-                <artifactId>spring-boot-starter-dubbo</artifactId>
-                <version>1.0.0</version>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>2.7.18</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>2.7.18</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.apache.dubbo</groupId>-->
+<!--                <artifactId>dubbo</artifactId>-->
+<!--                <version>2.7.18</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -93,11 +108,6 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.9.2</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
                 <version>2.9.2</version>
             </dependency>
         </dependencies>

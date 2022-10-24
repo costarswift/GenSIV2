@@ -11,9 +11,15 @@ import com.myserver.utils.HttpUtil;
 @Service
 public class MobileAreaServiceImpl implements MobileAreaService{
     @Override
-    public String getMobileArea(String mobile) throws Exception {
-        String tagSearchUrl = "https://www.sogou.com/websearch/phoneAddress.jsp?phoneNumber=${mobile}&cb=handlenumber&isSogoDomain=0";
-        String s = HttpUtil.httpGet(tagSearchUrl.replace("${mobile}",mobile));
-        return s.substring(s.indexOf("\"")+1,s.lastIndexOf("\""));
+    public String getMobileArea(String mobile) {
+        System.out.println("====开始查询手机号码归属地======");
+        try {
+            String tagSearchUrl = "https://www.sogou.com/websearch/phoneAddress.jsp?phoneNumber=${mobile}&cb=handlenumber&isSogoDomain=0";
+            String s = HttpUtil.httpGet(tagSearchUrl.replace("${mobile}",mobile));
+            return s.substring(s.indexOf("(")+1,s.lastIndexOf(")"));
+        }catch (Exception e){
+            return "unknown";
+        }
+
     }
 }
