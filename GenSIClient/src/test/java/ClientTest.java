@@ -22,20 +22,20 @@ public class ClientTest {
         ftClient.setConnectTimeout(30000);
         ftClient.setSocketTimeout(30000);
         //向第三方系统分配
-        ftClient.setPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv07sqgj5F+72UPN2Pv+vu4ln9e2wN3Mlg1gOJdDYElT02dH/MpYM5KYEUF9Fsf6CVwD4tGMRrrrcS3y0vPlqz9v/O8QGoZwzGY+1MlIWddK+RwcY/i/KAwqMLLRiXXcSvERnPCSn1Uuar4GtjNO8cit9MtezgThccWfmb+ghrjkN/fxJB9rDjKYBFo7nRY07SpUsU/eaGZuxYXQcH4HEhaUORDaiLmwmCLD6mgmY27gDRProCWhv2ybiAdD5aJidn+j9s7L6oTbD4lIL4RqsXMkM5WpSB4cXwkr+QCTr8hLp68+wjz7pc+CmF9j1IC//dK8vfjmgy3DrEVnGFiVxrwIDAQAB");
+        ftClient.setPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkii0/acnSZsnNS8KYcnyFJIdKuWWNwNGeiVAuFoOtuwTy9Ff5m5Hg2AaVeFEQ04/iTLvQj0XOdkl8AYsXpte/wAR3q4XLpFulgaUM5DTgrc9lBJQe/0wWiCoINGqYPj2cTni3jSuZZcPqvqeWCZVuYbXp+p5JSkDWuaIbOFVzR0/mAgtqnnQPG3qz6033KO975sNObIjtRM3idVfb2Rm/sYKLmj+Ac5FkcHfj8QuoyZ6RYzobOhHfL19bwy976Yp0aHP2nhMqSD1fQXxB8B9PDq6sDs1+xcrTDpY0GBfGFAs3gqZ0+MrP/Zrbm/+RyHDhzd+IzE4K6/n5l9VyQv5YQIDAQAB");
         String ftRes = "";
         //二、header参数部分
         ReqHeader reqHeader = new ReqHeader();
         //向第三方系统分配
-        reqHeader.setSysId("MyTestSys");
+        reqHeader.setSysId("GenSIClient");
         //用户名，密码，暂时无验证方案。预留。
         reqHeader.setSysUser("testUser");
         reqHeader.setSysPwd("testPwd");
         //唯一的请求ID。 重复的transId将直接返回第一次请求的结果。
-        reqHeader.setTransId("2021111201526");
+        reqHeader.setTransId("20211112015278");
         //服务功能码-查询手机号码标注
-        reqHeader.setServiceCode("search_mobile_mark");
-//        reqHeader.setServiceCode("search_mobile_area");
+//        reqHeader.setServiceCode("search_mobile_mark");
+        reqHeader.setServiceCode("search_mobile_area");
         ftClient.setReportHeader(reqHeader);
 
         //三、业务参数部分 由提供的接口文档确定
